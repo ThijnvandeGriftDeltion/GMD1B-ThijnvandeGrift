@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BackToMenu : MonoBehaviour {
 	
-	public Canvas menu;
+	public GameObject credits;
 	
 	// Use this for initialization
 	void Start () {
@@ -12,17 +12,16 @@ public class BackToMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Back ();
-		CanvasUit ();
+		
 	}
 	
-	public void Back () {
-		if(Input.GetButtonDown ("Jump")) {
-			menu.enabled = true;
+	public void Credits () {
+		credits.SetActive(true);
+	}
+	
+	public void Creditsuit () {
+		if (Input.GetButtonDown("jump")) {
+			credits.SetActive(false);
 		}
-	}
-	
-	public void CanvasUit () {
-		menu.enabled = false;
 	}
 }

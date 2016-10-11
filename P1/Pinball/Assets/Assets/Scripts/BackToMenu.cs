@@ -5,14 +5,8 @@ public class BackToMenu : MonoBehaviour {
 	
 	public GameObject credits;
 	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
 	void Update () {
-		
+		Creditsuit();
 	}
 	
 	public void Credits () {
@@ -20,7 +14,7 @@ public class BackToMenu : MonoBehaviour {
 	}
 	
 	public void Creditsuit () {
-		if (Input.GetButtonDown("jump")) {
+		if (Input.GetButtonDown("Jump")) {
 			credits.SetActive(false);
 		}
 	}

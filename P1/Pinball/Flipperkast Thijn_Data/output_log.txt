@@ -16,20 +16,20 @@ Platform assembly: C:\Users\tvdgr\Desktop\GitHub\GMD1B-ThijnvandeGrift\P1\Pinbal
 Loading C:\Users\tvdgr\Desktop\GitHub\GMD1B-ThijnvandeGrift\P1\Pinball\Flipperkast Thijn_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\tvdgr\Desktop\GitHub\GMD1B-ThijnvandeGrift\P1\Pinball\Flipperkast Thijn_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\tvdgr\Desktop\GitHub\GMD1B-ThijnvandeGrift\P1\Pinball\Flipperkast Thijn_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.127 seconds
+- Completed reload, in  0.142 seconds
 Platform assembly: C:\Users\tvdgr\Desktop\GitHub\GMD1B-ThijnvandeGrift\P1\Pinball\Flipperkast Thijn_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\tvdgr\Desktop\GitHub\GMD1B-ThijnvandeGrift\P1\Pinball\Flipperkast Thijn_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.492938 ms
+UnloadTime: 0.991209 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1fd8 -> priority: 1 
-  Thread -> id: 63c -> priority: 1 
+  Thread -> id: 116c -> priority: 1 
+  Thread -> id: 1f0 -> priority: 1 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.945382 ms
+UnloadTime: 3.023407 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 463.
-Total: 0.366222 ms (FindLiveObjects: 0.025679 ms CreateObjectMapping: 0.019358 ms MarkObjects: 0.312493 ms  DeleteObjects: 0.007901 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 464.
+Total: 0.749432 ms (FindLiveObjects: 0.046222 ms CreateObjectMapping: 0.037135 ms MarkObjects: 0.566913 ms  DeleteObjects: 0.097975 ms)
 

@@ -14,10 +14,11 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	score.text = "Getal: " + getal.ToString ();
+		
 	}
 	
 	public void Hit () {
 		getal = getal + 1;
+		score.text = "Getal: " + getal.ToString ();
 	}
 }

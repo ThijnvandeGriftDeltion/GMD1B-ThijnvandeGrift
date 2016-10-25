@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-	public int getal;
+	static int getal;
 	public Text score;
 
 	// Use this for initialization
@@ -17,8 +17,9 @@ public class Score : MonoBehaviour {
 		
 	}
 	
-	public void Hit () {
+	public void OnCollisionEnter (Collision collision) {
 		getal = getal + 1;
 		score.text = "Getal: " + getal.ToString ();
+		print(getal);
 	}
 }

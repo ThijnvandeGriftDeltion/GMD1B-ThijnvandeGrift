@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4ae59608f779dc247952401ee86558cf
-timeCreated: 1477408357
+guid: e41eb8a0ba2dcf84e9eb5fd70708832b
+timeCreated: 1477412447
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -8,15 +8,30 @@ ModelImporter:
     100000: //RootNode
     100002: Line001
     100004: Line002
+    100006: Line003
+    100008: Line004
+    100010: Line005
     400000: //RootNode
     400002: Line001
     400004: Line002
+    400006: Line003
+    400008: Line004
+    400010: Line005
     2300000: Line001
     2300002: Line002
+    2300004: Line003
+    2300006: Line004
+    2300008: Line005
     3300000: Line001
     3300002: Line002
+    3300004: Line003
+    3300006: Line004
+    3300008: Line005
     4300000: Line001
     4300002: Line002
+    4300004: Line003
+    4300006: Line004
+    4300008: Line005
     9500000: //RootNode
   materials:
     importMaterials: 1

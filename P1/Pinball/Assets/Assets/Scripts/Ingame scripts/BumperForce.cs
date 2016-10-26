@@ -3,15 +3,10 @@ using System.Collections;
 
 public class BumperForce : MonoBehaviour {
 
-	public float thrust;
 	public Rigidbody pinball;
-	public GameObject ball;
-	
-	void Start () {
-		pinball = ball.GetComponent<Rigidbody>();
-	}
+	public Vector3 v;
 	
 	public void OnCollisionEnter (Collision collision) {
-		pinball.AddForce(5,5,5 * thrust);
+		pinball.AddForce(v);
 	}
 }

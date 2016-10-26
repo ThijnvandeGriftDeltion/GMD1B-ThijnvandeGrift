@@ -20,6 +20,5 @@ public class Score : MonoBehaviour {
 	public void OnCollisionEnter (Collision collision) {
 		getal = getal + 1;
 		score.text = "Getal: " + getal.ToString ();
-		print(getal);
 	}
 }

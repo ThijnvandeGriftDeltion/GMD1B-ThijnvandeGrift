@@ -17,5 +17,8 @@ public class BackToMenu : MonoBehaviour {
 		if (Input.GetButtonDown("Jump")) {
 			credits.SetActive(false);
 		}
+		if (Input.GetButtonDown("Escape")) {
+			credits.SetActive(false);
+		}
 	}
 }

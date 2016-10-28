@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Rotator : MonoBehaviour {
+public class RotatorLinks : MonoBehaviour {
 
 	public float flipperStrength;
 	public float pushForce;
-	//private HingeJoint hinge;
 
 	void Start () {
-		//hinge = GetComponent<HingeJoint>();
 	}
 	
 	// Update is called once per frame

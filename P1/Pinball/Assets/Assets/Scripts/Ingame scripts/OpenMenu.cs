@@ -8,7 +8,6 @@ public class OpenMenu : MonoBehaviour {
 	public GameObject controls;
 	public GameObject play;
 	public GameObject colorui;
-	public GameObject colorui2;
 	public bool menuaan;
 
 	void Update () {
@@ -17,21 +16,15 @@ public class OpenMenu : MonoBehaviour {
 	}
 	//Opens the menu.
 	public void Menuaan () {
-		if (Input.GetButtonDown("Escape") && menuaan == false) {
+		if (Input.GetButtonDown("Escape")) {
 			menu.SetActive(true);
-			menuaan = true;
+			Time.timeScale = 0;
 		}
 	}
 	//Resumes the game.
 	public void Resume() {
 		menu.SetActive(false);
-	}
-	
-	public void ResumeByButton() {
-		if (Input.GetButtonDown("Escape") && menuaan == true) {
-			menu.SetActive(false);
-			menuaan = false;
-		}
+		Time.timeScale = 1;
 	}
 	
 	//Opens the controls.
@@ -59,9 +52,8 @@ public class OpenMenu : MonoBehaviour {
 	public void StartGame () {
 		play.SetActive(false);
 		colorui.SetActive(false);
-		colorui2.SetActive(false);
-		GameObject.Find("Pinball").GetComponent<Pinball>().enabled = true;
 		GameObject.Find("FlipperLinks").GetComponent<RotatorLinks>().enabled = true;
 		GameObject.Find("FlipperRechts").GetComponent<RotatorRechts>().enabled = true;
+		GameObject.Find("Spawnlocation pinball").GetComponent<NewBall>().enabled = true;
 	}
 }

@@ -9,10 +9,12 @@ public class BackToMenu : MonoBehaviour {
 		Creditsuit();
 	}
 	
+	//Opens the credits
 	public void Credits () {
 		credits.SetActive(true);
 	}
 	
+	//Closes the credits
 	public void Creditsuit () {
 		if (Input.GetButtonDown("Jump")) {
 			credits.SetActive(false);

@@ -10,6 +10,8 @@ public class Pinball : MonoBehaviour {
 	void Update () {
 		StartGame();
 	}
+	
+	//Launches the ball at the start of the game when you press the spacebar
 	public void StartGame() {
 		if (Input.GetButtonDown ("Jump")) {
 			pinball = GetComponent<Rigidbody>();

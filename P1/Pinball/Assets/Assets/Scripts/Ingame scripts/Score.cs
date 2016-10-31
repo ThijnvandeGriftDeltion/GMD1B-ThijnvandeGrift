@@ -9,7 +9,7 @@ public class Score : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		getal = 0;
 	}
 	
 	// Update is called once per frame

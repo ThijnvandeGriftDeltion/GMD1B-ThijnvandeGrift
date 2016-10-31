@@ -3,9 +3,10 @@ using System.Collections;
 
 public class NoWayBack : MonoBehaviour {
 
-	public GameObject stop;
+	public GameObject prefab;
+	public GameObject spawnlocation;
 	
 	public void OnTriggerEnter (Collider C) {
-		stop.GetComponent<MeshRenderer>().enabled = true;
+		Instantiate(prefab, spawnlocation.GetComponent<Transform>().position, spawnlocation.GetComponent<Transform>().rotation);
 	}
 }

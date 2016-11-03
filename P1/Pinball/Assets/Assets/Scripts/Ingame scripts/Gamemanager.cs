@@ -6,20 +6,16 @@ using UnityEngine.SceneManagement;
 public class Gamemanager : MonoBehaviour {
 
 
-	public int lives = 3;
+	public static int lives = 3;
 	public GameObject gameover;
 	public Text livesdisplay;
-
-	void Start () {
-		
-	}
 	
 	void Update () {
 		DisplayLives();
 		GameOver();
 	}
 	
-	//If you're out of lives it opens a panel
+	//When you're out of lives it opens a panel
 	public void GameOver () {
 		if (lives ==  0) {
 			gameover.SetActive(true);

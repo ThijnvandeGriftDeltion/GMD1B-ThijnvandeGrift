@@ -5,6 +5,7 @@ public class DisableSpawning : MonoBehaviour {
 
 	//Disables the script that spawns a new ball
 	public void OnTriggerEnter (Collider C) {
-				GameObject.Find("Spawnlocation pinball").GetComponent<NewBall>().enabled = false;
+		GameObject.Find("Spawnlocation pinball").GetComponent<NewBall>().enabled = false;
+		GameObject.Find("Ball(Clone)").GetComponent<Pinball>().enabled = true;
 	}
 }

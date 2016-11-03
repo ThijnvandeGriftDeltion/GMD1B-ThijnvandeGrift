@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-	static int getal;
+	public static int getal;
 	public Text score;
+	public ParticleSystem particles;
+	public bool extra;
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +16,22 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		ExtraLife();
 	}
 	
+	//Adds 1 point to the score
 	public void OnCollisionEnter (Collision collision) {
+		particles.Play();
 		getal = getal + 1;
 		score.text = getal.ToString ();
+	}
+	
+	//Gives the player an extra life if he reaches a score of 100
+	public void ExtraLife () {
+		if ((getal >= 200) && (extra == false)) {
+			extra = true;
+			Gamemanager.lives = Gamemanager.lives;
+			Gamemanager.lives += 1;
+		}
 	}
 }

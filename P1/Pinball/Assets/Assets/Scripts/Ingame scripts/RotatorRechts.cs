@@ -5,13 +5,9 @@ public class RotatorRechts : MonoBehaviour {
 
 	public float flipperStrength;
 	public float pushForce;
-	//private HingeJoint hinge;
 
-	void Start () {
-		//hinge = GetComponent<HingeJoint>();
-	}
-	
 	// Update is called once per frame
+	// Rotates the right flipper by using a hinge joint
 	void FixedUpdate () {
 		if(Input.GetButtonDown("E")) {
 			Vector3 f = transform.up * flipperStrength;

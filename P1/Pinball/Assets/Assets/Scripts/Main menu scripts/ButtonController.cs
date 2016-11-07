@@ -12,6 +12,7 @@ public class ButtonController : MonoBehaviour {
         loadingImage.SetActive(true);
         SceneManager.LoadScene ("Pinball");
 		Time.timeScale = 1;
+		Gamemanager.lives = 3;
     }
 	
 	//Puts up a loading image while loading a different scene
@@ -19,6 +20,7 @@ public class ButtonController : MonoBehaviour {
         loadingImage.SetActive(true);
         SceneManager.LoadScene ("Pinball2");
 		Time.timeScale = 1;
+		Gamemanager.lives = 3;
     }
 	
 	public void ChooseLevel() {

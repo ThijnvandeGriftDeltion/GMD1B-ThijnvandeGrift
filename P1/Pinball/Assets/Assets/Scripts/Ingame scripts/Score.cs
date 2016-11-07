@@ -22,13 +22,13 @@ public class Score : MonoBehaviour {
 	//Adds 1 point to the score
 	public void OnCollisionEnter (Collision collision) {
 		particles.Play();
-		getal = getal + 1;
+		getal = getal + 1000;
 		score.text = getal.ToString ();
 	}
 	
 	//Gives the player an extra life if he reaches a score of 100
 	public void ExtraLife () {
-		if ((getal >= 200) && (extra == false)) {
+		if ((getal >= 200000) && (extra == false)) {
 			extra = true;
 			Gamemanager.lives = Gamemanager.lives;
 			Gamemanager.lives += 1;

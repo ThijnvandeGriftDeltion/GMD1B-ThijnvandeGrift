@@ -24,5 +24,16 @@ public class BeginEnEind : MonoBehaviour {
 		else if (C.gameObject.tag == "BonusBall2") {
 			bonus.GetComponent<BonusBall>().spawned = false;
 		}
+		else if (C.gameObject.tag == "Ball") {
+			Gamemanager.lives = Gamemanager.lives;
+			Gamemanager.lives -= 1;
+			GameObject.Find("Spawnlocation pinball").GetComponent<NewBall>().enabled = true;
+			Destroy(GameObject.Find("Stop(Clone)"));
+			Destroy(GameObject.Find("BonusBall(Clone)"));
+			bonus.GetComponent<BonusBall>().spawned = false;
+		}
+			else if (C.gameObject.tag == "BonusBall") {
+			bonus.GetComponent<BonusBall>().spawned = false;
+		}
 	}
 }

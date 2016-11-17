@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour {
 	public GameObject ingamemenu;
 	
 	void Start () {
-		Time.timeScale = .1f;
+		Time.timeScale = 1;
 	}
 	
 	void Update () {

@@ -47,14 +47,14 @@ public class Spawn : MonoBehaviour {
 		timerrandom -= Time.deltaTime;
 		if (timer <= 0) {
 			spawningplace = spawnrow1.transform.position;
-			row1.transform.localScale = new Vector3(0.3f, 0.3f, size);
+			row1.transform.localScale = new Vector3(0.5f, 0.3f, size);
 			Instantiate(row1, spawningplace, Quaternion.identity);
 			size = Random.Range(minsize, maxsize);
 			spawningplace2 = spawnrow2.transform.position;
 			Instantiate(row2, spawningplace2, Quaternion.Euler(0, 180, 0));
 			spawningplace4 = spawnrow4.transform.position;
 			Instantiate(row4, spawningplace4, Quaternion.Euler(0, 180, 0));
-			timer = 1;
+			timer = 1.5f;
 		}
 		if (timerrandom <= 0) {
 			spawningplace3 = spawnrow3.transform.position;

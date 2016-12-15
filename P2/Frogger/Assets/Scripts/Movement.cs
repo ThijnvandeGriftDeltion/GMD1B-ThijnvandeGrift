@@ -9,6 +9,8 @@ public class Movement : MonoBehaviour {
 	public GameObject player;
 	public GameObject spawnplayer;
 	public Vector3 spawn;
+	public float jumppower = 100;
+	public Rigidbody player;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,9 @@ public class Movement : MonoBehaviour {
 		ver = Input.GetAxis("Vertical");
 		a.z = ver;
 		transform.Translate(a * Time.deltaTime);
+		if (Input.GetButtonDown("Jump")) {
+		player.AddForce(transform.up*jumppower);
+		}
 	}
 	
 	public void OnCollisionEnter (Collision C) {

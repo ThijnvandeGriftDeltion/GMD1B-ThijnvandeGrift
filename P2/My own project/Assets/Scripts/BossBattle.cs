@@ -12,6 +12,7 @@ public class BossBattle : MonoBehaviour {
 	public GameObject boss;
 	public GameObject guideLight;
 	public GameObject door;
+	public bool dead;
 
 	// Use this for initialization
 	void Start () {

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Detection : MonoBehaviour {
 	
-	//Int
+	//Ints
 	public static int shotsHit;
 	public static int shotsFired;
 	public static int accuracy = 100;
@@ -14,6 +14,10 @@ public class Detection : MonoBehaviour {
 	public int totalbullets;
 	public int reloadedbullets;
 	public int bullets;
+	public int health;
+	public int armor;
+	public int incomingdamage;
+	public int enemydamage;
 	
 	//UI
 	public Text accuracyui;
@@ -23,20 +27,23 @@ public class Detection : MonoBehaviour {
 	public Text timerui;
 	public Text bulletsui;
 	public Text pointsui;
+	public Text healthui;
 	
 	//Floats
 	public float timershot;
-	private float resettimer = .4f;
+	private float resettimer = .75f;
 	private float reload;
 	private float reloadtime = 2;
 	private float timebetweenshot;
-	private float timerbetweenshot = .75f;
+	private float timerbetweenshot = 1f;
 	public static float time;
 	
 	//GameObjects
 	public GameObject grenade;
 	public GameObject grenadelauncher;
 	public GameObject barrel;
+	public GameObject body;
+	public GameObject playerManager;
 	
 	//Vector3
 	private Vector3 barrelpos;
@@ -47,11 +54,13 @@ public class Detection : MonoBehaviour {
 	//Bools
 	public bool aim = false;
 	public bool startreload = false;
+	public bool hitbyenemy;
 
 	// Use this for initialization
 	void Start () {
 		reload = reloadtime;
 		Cursor.visible = false;
+		health = playerManager.GetComponent<PlayerManager>().hp;
 	}
 	
 	// Update is called once per frame
@@ -61,6 +70,7 @@ public class Detection : MonoBehaviour {
 		Timer ();
 		Aim ();
 		Reload ();
+		Restart ();
 	}
 	
 	//Instantiate a grenade and reload the gun when it's out of ammo.	
@@ -70,17 +80,17 @@ public class Detection : MonoBehaviour {
 			barrel.transform.Rotate(new Vector3(0,0,+1.85f));
 		}
 		if (bullets == 0) {
-			totalbullets = totalbullets - reloadedbullets;
 			Reload ();
 			startreload = true;
 		}
-		if(Input.GetButtonDown("Fire1") && timebetweenshot <= 0 && bullets > 0) {
+		if(Input.GetButtonDown("Fire1") && timebetweenshot <= 0 && bullets > 0 && totalbullets >= 0 && startreload == false) {
 			reloadedbullets += 1;
-			Instantiate(grenade, barrelpos, Quaternion.identity);
+			Instantiate(grenade, barrelpos, Quaternion.Euler(0, 90, 0));
 			timershot = resettimer;
 			timebetweenshot = timerbetweenshot;
 			shotsFired = shotsFired + 1;
 			bullets -= 1;
+			accuracy = shotsHit * 100 / shotsFired;
 		}
 	}
 	
@@ -98,17 +108,18 @@ public class Detection : MonoBehaviour {
 	
 	//All time based components.
 	public void Timer () {
+		health = playerManager.GetComponent<PlayerManager>().hp;
 		timershot -= Time.deltaTime;
 		time += Time.deltaTime;
 		timerui.text = time.ToString();
 		timebetweenshot -= Time.deltaTime;
-		accuracy = shotsHit * 100 / shotsFired;
 		accuracyui.text = accuracy.ToString();
 		shotsfiredui.text = shotsFired.ToString();
 		shotshitui.text = shotsHit.ToString();
 		headshotsui.text = headshot.ToString();
 		pointsui.text = points.ToString();
 		bulletsui.text = bullets.ToString();
+		healthui.text = health.ToString();
 	}
 	
 	
@@ -123,6 +134,7 @@ public class Detection : MonoBehaviour {
 			reload -= Time.deltaTime;
 		}
 		else if (reload <= 0 && startreload == true) {
+			totalbullets = totalbullets - reloadedbullets;
 			reloadedbullets = 0;
 			bullets = 8;
 			reload = reloadtime;
@@ -149,6 +161,26 @@ public class Detection : MonoBehaviour {
 					hit.transform.gameObject.GetComponent<Door>().dooropen = false;
 				}
 			}
+		}
+	}
+	
+	//Restarts the game when health drops below 0
+	public void Restart () {
+		if (health <= 0) {
+			Scene scene = SceneManager.GetActiveScene();
+			SceneManager.LoadScene(scene.name);
+			Detection.shotsHit = Detection.shotsHit;
+			Detection.shotsFired = Detection.shotsFired;
+			Detection.headshot = Detection.headshot;
+			Detection.points = Detection.points;
+			Detection.time = Detection.time;
+			Detection.accuracy = Detection.accuracy;
+			Detection.shotsHit = 0;
+			Detection.shotsFired = 0;
+			Detection.headshot = 0;
+			Detection.time = 0;
+			Detection.accuracy = 100;
+			Time.timeScale = 1;
 		}
 	}
 }

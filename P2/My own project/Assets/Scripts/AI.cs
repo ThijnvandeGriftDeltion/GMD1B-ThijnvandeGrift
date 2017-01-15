@@ -9,6 +9,8 @@ public class AI : MonoBehaviour {
 	private RaycastHit hit;
 	public float timer = 2;
 	public int hp;
+	public int weapondamage;
+	public int trueweapondamage;
 	
 	void Update () {
 		timer -= Time.deltaTime;
@@ -23,10 +25,16 @@ public class AI : MonoBehaviour {
 					Debug.DrawLine (transform.position, hit.point, Color.red);
 					timer = 2;
 					if (hit.transform.tag == "Player") {
-						GameObject.Find("Body").GetComponent<FirstPerson>().health -= 1;
+						trueweapondamage = weapondamage - GameObject.Find("PlayerManager").GetComponent<PlayerManager>().armor;
+						GameObject.Find("PlayerManager").GetComponent<PlayerManager>().hp -= trueweapondamage;
 					}
 				}
 			}
+		}
+		if (hp <= 0) {
+			GameObject.Find("PlayerManager").GetComponent<PlayerManager>().playerxp += 5;
+			GameObject.Find("Gamemanager").GetComponent<Gamemanager>().enemies -= 1;
+			Destroy(gameObject);
 		}
 	}
 }

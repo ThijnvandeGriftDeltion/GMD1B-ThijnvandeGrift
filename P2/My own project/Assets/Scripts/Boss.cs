@@ -13,6 +13,8 @@ public class Boss : MonoBehaviour {
 	public int bosshp;
 	public GameObject bosshealthui;
 	public Text bosshpui;
+	public int weapondamage;
+	public int trueweapondamage;
 	
 	void Update () {
 		timer -= Time.deltaTime;
@@ -29,14 +31,17 @@ public class Boss : MonoBehaviour {
 					Debug.DrawLine (transform.position, hit.point, Color.red);
 					timer = 2;
 					if (hit.transform.tag == "Player") {
-						GameObject.Find("Body").GetComponent<FirstPerson>().health -= 5;
+						trueweapondamage = weapondamage - GameObject.Find("PlayerManager").GetComponent<PlayerManager>().armor; 
+						GameObject.Find("PlayerManager").GetComponent<PlayerManager>().hp -= trueweapondamage;
 					}
 				}
 			}
 		}
 		if (bosshp <= 0) {
-			Destroy(gameObject);
+			GameObject.Find("BossBattleManager").GetComponent<BossBattle>().dead = true;
+			GameObject.Find("PlayerManager").GetComponent<PlayerManager>().playerxp += 50;
 			bosshealthui.SetActive(false);
+			Destroy(gameObject);
 		}
 	}
 }

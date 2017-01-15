@@ -23,11 +23,13 @@ public class Grenade : MonoBehaviour {
 			grenade.AddForce(GameObject.Find("Main Camera").transform.forward * force);
 			shot = true;
 		}
+		weaponDamage = GameObject.Find("PlayerManager").GetComponent<PlayerManager>().weaponDamage;
 	}
 	
 	public void OnCollisionEnter (Collision C) {
 		explosionPos = transform.position;
-		ExplosionDamage();
+		ExplosionDamage ();
+		print("I hit something");
 		Destroy(gameObject);
 	}
 	
@@ -36,14 +38,21 @@ public class Grenade : MonoBehaviour {
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders) {
             Rigidbody rb = hit.GetComponent<Rigidbody>();
-            if (rb != null)
-                rb.AddExplosionForce(power, explosionPos, radius, 3.0F);
-				if(hit.transform.tag == "Enemy") {
+            if (rb != null) {
+                rb.AddExplosionForce(power, explosionPos, radius, 1);
+				if (hit.transform.tag == "Enemy") {
 					hit.GetComponent<AI>().hp -= weaponDamage;
 				}
-				else if (hit.transform.tag == "Boss") {
+				if (hit.transform.tag == "Boss") {
 					hit.GetComponent<Boss>().bosshp -= weaponDamage;
 				}
+				if (hit.transform.tag == "Player") {
+					GameObject.Find("PlayerManager").GetComponent<PlayerManager>().hp -= weaponDamage;
+				}
+			}
+			else {
+				Destroy(gameObject);
+			}
 		}
 	}
 }

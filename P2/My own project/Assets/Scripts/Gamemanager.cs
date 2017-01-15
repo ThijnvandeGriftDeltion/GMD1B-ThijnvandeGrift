@@ -11,7 +11,7 @@ public class Gamemanager : MonoBehaviour {
 	public float maxz = 24.5f;
 	public float y = .5f;
 	public float timer = 2;
-	public static int enemies = 0;
+	public int enemies = 0;
 
 	// Use this for initialization
 	void Start () {

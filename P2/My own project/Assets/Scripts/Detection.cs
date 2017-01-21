@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 public class Detection : MonoBehaviour {
 	
 	//Ints
-	public static int shotsHit;
-	public static int shotsFired;
-	public static int accuracy = 100;
-	public static int headshot;
-	public static int points;
 	public int totalbullets;
 	public int reloadedbullets;
 	public int bullets;
@@ -20,13 +15,7 @@ public class Detection : MonoBehaviour {
 	public int enemydamage;
 	
 	//UI
-	public Text accuracyui;
-	public Text shotsfiredui;
-	public Text shotshitui;
-	public Text headshotsui;
-	public Text timerui;
 	public Text bulletsui;
-	public Text pointsui;
 	public Text healthui;
 	
 	//Floats
@@ -83,14 +72,12 @@ public class Detection : MonoBehaviour {
 			Reload ();
 			startreload = true;
 		}
-		if(Input.GetButtonDown("Fire1") && timebetweenshot <= 0 && bullets > 0 && totalbullets >= 0 && startreload == false) {
+		if(Input.GetButtonDown("Fire1") && timebetweenshot <= 0 && bullets > 0 && totalbullets > 0 && startreload == false) {
 			reloadedbullets += 1;
 			Instantiate(grenade, barrelpos, Quaternion.Euler(0, 90, 0));
 			timershot = resettimer;
 			timebetweenshot = timerbetweenshot;
-			shotsFired = shotsFired + 1;
 			bullets -= 1;
-			accuracy = shotsHit * 100 / shotsFired;
 		}
 	}
 	
@@ -110,14 +97,7 @@ public class Detection : MonoBehaviour {
 	public void Timer () {
 		health = playerManager.GetComponent<PlayerManager>().hp;
 		timershot -= Time.deltaTime;
-		time += Time.deltaTime;
-		timerui.text = time.ToString();
 		timebetweenshot -= Time.deltaTime;
-		accuracyui.text = accuracy.ToString();
-		shotsfiredui.text = shotsFired.ToString();
-		shotshitui.text = shotsHit.ToString();
-		headshotsui.text = headshot.ToString();
-		pointsui.text = points.ToString();
 		bulletsui.text = bullets.ToString();
 		healthui.text = health.ToString();
 	}
@@ -142,23 +122,13 @@ public class Detection : MonoBehaviour {
 		}
 	}
 	
-	//A use button to open doors.
+	//A use button.
 	public void RaycastUse () {
-		if (Input.GetButtonDown("E") && hit.transform.tag == "New level door") {
-			SceneManager.LoadScene("Level 2");
-			print("open");
-			}
 		if (Physics.Raycast(transform.position, transform.forward, out hit, 2)) {
-			if (Input.GetButtonDown("E") && hit.transform.gameObject.GetComponent<Door>().dooropen == false) {
+			if (Input.GetButtonDown("E")) {
 				if (hit.transform.tag == "Door") {
 					hit.transform.Rotate(new Vector3(0,90,0));
 					hit.transform.gameObject.GetComponent<Door>().dooropen = true;
-				}
-			}
-			else if (Input.GetButtonDown("E") && hit.transform.gameObject.GetComponent<Door>().dooropen == true) {
-				if (hit.transform.tag == "Door") {
-					hit.transform.Rotate(new Vector3(0,-90,0));
-					hit.transform.gameObject.GetComponent<Door>().dooropen = false;
 				}
 			}
 		}
@@ -169,17 +139,6 @@ public class Detection : MonoBehaviour {
 		if (health <= 0) {
 			Scene scene = SceneManager.GetActiveScene();
 			SceneManager.LoadScene(scene.name);
-			Detection.shotsHit = Detection.shotsHit;
-			Detection.shotsFired = Detection.shotsFired;
-			Detection.headshot = Detection.headshot;
-			Detection.points = Detection.points;
-			Detection.time = Detection.time;
-			Detection.accuracy = Detection.accuracy;
-			Detection.shotsHit = 0;
-			Detection.shotsFired = 0;
-			Detection.headshot = 0;
-			Detection.time = 0;
-			Detection.accuracy = 100;
 			Time.timeScale = 1;
 		}
 	}

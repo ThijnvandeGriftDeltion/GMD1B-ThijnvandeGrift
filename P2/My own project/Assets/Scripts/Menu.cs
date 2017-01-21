@@ -35,17 +35,6 @@ public class Menu : MonoBehaviour {
 	public void Restart() {
 		Scene scene = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(scene.name);
-		Detection.shotsHit = Detection.shotsHit;
-		Detection.shotsFired = Detection.shotsFired;
-		Detection.headshot = Detection.headshot;
-		Detection.points = Detection.points;
-		Detection.time = Detection.time;
-		Detection.accuracy = Detection.accuracy;
-		Detection.shotsHit = 0;
-		Detection.shotsFired = 0;
-		Detection.headshot = 0;
-		Detection.time = 0;
-		Detection.accuracy = 100;
 		Time.timeScale = 1;
 	}
 }

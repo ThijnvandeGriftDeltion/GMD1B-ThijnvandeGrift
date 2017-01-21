@@ -3,8 +3,6 @@ using System.Collections;
 
 public class SuperButton : MonoBehaviour {
 	
-	//if (Input.GetButtonDown("E") && hit.transform.tag == "New level door") {
-	
 	public enum State {
 		Een,
 		Twee,

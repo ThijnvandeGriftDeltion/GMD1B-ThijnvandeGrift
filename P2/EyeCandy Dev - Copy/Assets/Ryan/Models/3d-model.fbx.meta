@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: added1b1954813a4991f081f26d07916
+timeCreated: 1484663849
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Group_001
+    100004: Layer0_001
+    100006: Lestnica_001
+    100008: Lestnica_003
+    100010: Lestnica_005
+    100012: Lestnica_007
+    100014: Machta_001
+    100016: Nogi pod truboj_001
+    100018: Nogi pod truboj_002
+    100020: Nogi pod truboj_003
+    100022: Nogi pod truboj_004
+    100024: Nogi pod truboj_005
+    100026: Nogi pod truboj_006
+    100028: Nogi pod truboj_007
+    100030: Nogi pod truboj_008
+    100032: Nogi pod truboj_009
+    100034: Nogi pod truboj_010
+    100036: Nogi_001
+    100038: Nogi_003
+    100040: Nogi_005
+    100042: Nogi_007
+    100044: Nogi_009
+    100046: Setka_001
+    100048: Setka_002
+    100050: Setka_003
+    100052: Setka_004
+    100054: Setka_005
+    100056: Setka_006
+    100058: Setka_007
+    100060: Setka_008
+    100062: Setka_009
+    100064: Setka_010
+    100066: Small nogi_001
+    100068: Small nogi_003
+    100070: Small nogi_005
+    100072: Znak_001
+    100074: Znak_002
+    100076: Znak_003
+    100078: Znak_004
+    400000: //RootNode
+    400002: Group_001
+    400004: Layer0_001
+    400006: Lestnica_001
+    400008: Lestnica_003
+    400010: Lestnica_005
+    400012: Lestnica_007
+    400014: Machta_001
+    400016: Nogi pod truboj_001
+    400018: Nogi pod truboj_002
+    400020: Nogi pod truboj_003
+    400022: Nogi pod truboj_004
+    400024: Nogi pod truboj_005
+    400026: Nogi pod truboj_006
+    400028: Nogi pod truboj_007
+    400030: Nogi pod truboj_008
+    400032: Nogi pod truboj_009
+    400034: Nogi pod truboj_010
+    400036: Nogi_001
+    400038: Nogi_003
+    400040: Nogi_005
+    400042: Nogi_007
+    400044: Nogi_009
+    400046: Setka_001
+    400048: Setka_002
+    400050: Setka_003
+    400052: Setka_004
+    400054: Setka_005
+    400056: Setka_006
+    400058: Setka_007
+    400060: Setka_008
+    400062: Setka_009
+    400064: Setka_010
+    400066: Small nogi_001
+    400068: Small nogi_003
+    400070: Small nogi_005
+    400072: Znak_001
+    400074: Znak_002
+    400076: Znak_003
+    400078: Znak_004
+    2300000: Group_001
+    2300002: Layer0_001
+    2300004: Lestnica_001
+    2300006: Lestnica_003
+    2300008: Lestnica_005
+    2300010: Lestnica_007
+    2300012: Machta_001
+    2300014: Nogi pod truboj_001
+    2300016: Nogi pod truboj_002
+    2300018: Nogi pod truboj_003
+    2300020: Nogi pod truboj_004
+    2300022: Nogi pod truboj_005
+    2300024: Nogi pod truboj_006
+    2300026: Nogi pod truboj_007
+    2300028: Nogi pod truboj_008
+    2300030: Nogi pod truboj_009
+    2300032: Nogi pod truboj_010
+    2300034: Nogi_001
+    2300036: Nogi_003
+    2300038: Nogi_005
+    2300040: Nogi_007
+    2300042: Nogi_009
+    2300044: Setka_001
+    2300046: Setka_002
+    2300048: Setka_003
+    2300050: Setka_004
+    2300052: Setka_005
+    2300054: Setka_006
+    2300056: Setka_007
+    2300058: Setka_008
+    2300060: Setka_009
+    2300062: Setka_010
+    2300064: Small nogi_001
+    2300066: Small nogi_003
+    2300068: Small nogi_005
+    2300070: Znak_001
+    2300072: Znak_002
+    2300074: Znak_003
+    2300076: Znak_004
+    3300000: Group_001
+    3300002: Layer0_001
+    3300004: Lestnica_001
+    3300006: Lestnica_003
+    3300008: Lestnica_005
+    3300010: Lestnica_007
+    3300012: Machta_001
+    3300014: Nogi pod truboj_001
+    3300016: Nogi pod truboj_002
+    3300018: Nogi pod truboj_003
+    3300020: Nogi pod truboj_004
+    3300022: Nogi pod truboj_005
+    3300024: Nogi pod truboj_006
+    3300026: Nogi pod truboj_007
+    3300028: Nogi pod truboj_008
+    3300030: Nogi pod truboj_009
+    3300032: Nogi pod truboj_010
+    3300034: Nogi_001
+    3300036: Nogi_003
+    3300038: Nogi_005
+    3300040: Nogi_007
+    3300042: Nogi_009
+    3300044: Setka_001
+    3300046: Setka_002
+    3300048: Setka_003
+    3300050: Setka_004
+    3300052: Setka_005
+    3300054: Setka_006
+    3300056: Setka_007
+    3300058: Setka_008
+    3300060: Setka_009
+    3300062: Setka_010
+    3300064: Small nogi_001
+    3300066: Small nogi_003
+    3300068: Small nogi_005
+    3300070: Znak_001
+    3300072: Znak_002
+    3300074: Znak_003
+    3300076: Znak_004
+    4300000: Znak_004
+    4300002: Znak_003
+    4300004: Znak_002
+    4300006: Znak_001
+    4300008: Machta_001
+    4300010: Nogi pod truboj_010
+    4300012: Nogi pod truboj_009
+    4300014: Nogi pod truboj_008
+    4300016: Nogi pod truboj_007
+    4300018: Nogi pod truboj_006
+    4300020: Nogi pod truboj_005
+    4300022: Nogi pod truboj_004
+    4300024: Nogi pod truboj_003
+    4300026: Nogi pod truboj_002
+    4300028: Nogi pod truboj_001
+    4300030: Setka_010
+    4300032: Setka_009
+    4300034: Setka_008
+    4300036: Setka_007
+    4300038: Setka_006
+    4300040: Setka_005
+    4300042: Setka_004
+    4300044: Setka_003
+    4300046: Setka_002
+    4300048: Setka_001
+    4300050: Nogi_009
+    4300052: Nogi_007
+    4300054: Small nogi_005
+    4300056: Small nogi_003
+    4300058: Small nogi_001
+    4300060: Nogi_005
+    4300062: Nogi_003
+    4300064: Lestnica_007
+    4300066: Lestnica_005
+    4300068: Lestnica_003
+    4300070: Nogi_001
+    4300072: Lestnica_001
+    4300074: Group_001
+    4300076: Layer0_001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

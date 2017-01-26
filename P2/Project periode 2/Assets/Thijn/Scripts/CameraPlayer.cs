@@ -29,9 +29,6 @@ public class CameraPlayer : MonoBehaviour {
 				if (hit.transform.tag == "ElevatorButton2") {
 					elevator.GetComponent<SuperButton>().state = SuperButton.State.Twee;
 				}
-				if (hit.transform.tag == "ElevatorButton3") {
-					elevator.GetComponent<SuperButton>().state = SuperButton.State.Drie;
-				}
 			}
 		}
 	}

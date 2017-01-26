@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AI : MonoBehaviour {
 	
+	//AI werkt niet goed. Had geen tijd meer om te vragen wat ik fout deed ivm geen les toen ik hier mee bezig was.
+	
 	public float movespeed;
 	public float attackrange;
 	private RaycastHit hit;
@@ -12,28 +14,42 @@ public class AI : MonoBehaviour {
 	public GameObject[] enemies;
 	public GameObject enemy;
 	public int index;
-	public GameObject playermanager;
 	public float newenemy;
 	public int newenemytime;
 	public Material Blue_team;
 	public Material Red_team;
+	public GameObject player;
 	
+	//Sets the team color to the bot.
 	void Start () {
 		DontDestroyOnLoad(transform.gameObject);
+		player = GameObject.Find("Player");
 		if (transform.tag == "Blue_team") {
 			GetComponent<Renderer>().material = Blue_team;
 		}
 		else if (transform.tag == "Red_team") {
 			GetComponent<Renderer>().material = Red_team;
 		}
-		movespeed = playermanager.GetComponent<PlayerManager>().movement;
-		weaponDamage = playermanager.GetComponent<PlayerManager>().weaponDamage;
 	}
 	
+	//Update is called once every frame.
 	void Update () {
-		hp = playermanager.GetComponent<PlayerManager>().hp;
 		newenemy -= Time.deltaTime;
 		timer -= Time.deltaTime;
+		Death ();
+		ChooseEnemyAndAttack ();
+	}
+	
+	public void Death () {
+		//If its health is 0 or below it gets destroyed.
+		if (hp <= 0) {
+			GameObject.Find("PlayerManagerM").GetComponent<PlayerManager>().playerxp += 5;
+			Destroy(gameObject);
+		}
+	}
+	
+	//Counts all objects with the opposite team tag and orders them in a list. Chooses a random object out of that list as enemy and attacks it.
+	public void ChooseEnemyAndAttack () {
 		if (transform.tag == "Red_team") {
 		enemies = GameObject.FindGameObjectsWithTag("Blue_team");
 		}
@@ -55,21 +71,17 @@ public class AI : MonoBehaviour {
 		}
 		else {
 			if (timer <= 0) {
-				if (Physics.Raycast(transform.position, transform.forward, out hit, 100f)) {
+				if (Physics.Raycast(transform.position, transform.forward, out hit, 20)) {
 					Debug.DrawLine (transform.position, hit.point, Color.red);
 					timer = 2;
-					if (hit.transform.tag == "Blue_team" && transform.tag == "Red_team") {
-						hit.transform.gameObject.GetComponent<PlayerManager>().hp -= weaponDamage;
+					if (hit.transform.gameObject == player) {
+						player.GetComponent<PlayerManager>().hp -= weaponDamage;
 					}
-					if (hit.transform.tag == "Red_team" && transform.tag == "Blue_team") {
-						hit.transform.gameObject.GetComponent<PlayerManager>().hp -= weaponDamage;
+					else {
+						hit.transform.GetComponent<AI>().hp -= weaponDamage;
 					}
 				}
 			}
-		}
-		if (hp <= 0) {
-			GameObject.Find("PlayerManager").GetComponent<PlayerManager>().playerxp += 5;
-			Destroy(gameObject);
 		}
 	}
 }

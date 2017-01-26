@@ -36,14 +36,14 @@ public class GameManager : MonoBehaviour {
 	public int level;
 	public bool spawnset;
 
-	// Use this for initialization
+	//Makes sure this object doesnt get destroyed when switching scenes.
 	void Start () {
 		DontDestroyOnLoad(transform.gameObject);
 	}
 	
-	// Update is called once per frame
+	//Sets a random spawn for all bots and the player.
 	void Update () {
-		if (level > 0 && spawnset == false) {
+		if (spawnset == false) {
 			player = GameObject.Find("Player");
 			float x_red_team_1 = Random.Range(red_team_spawn_minX, red_team_spawn_maxX);
 			float z_red_team_1 = Random.Range(red_team_spawn_minZ, red_team_spawn_maxZ);
@@ -82,25 +82,10 @@ public class GameManager : MonoBehaviour {
 				Destroy(redplayer1);
 				player.transform.position = red_team_spawn1;
 			}
-			else if (player.transform.tag == "Blue_team") {
+			if (player.transform.tag == "Blue_team") {
 				Destroy(blueplayer1);
 				player.transform.position = blue_team_spawn1;
 			}
 		}
-		if (deadEnemy[0] == true && deadEnemy[2] == true && deadEnemy[3] == true && deadEnemy[4] == true && deadEnemy[5] == true && deadEnemy[6] == true && deadEnemy[7] == true) {
-			RestartGame();
-			deadEnemy[0] = false;
-			deadEnemy[1] = false;
-			deadEnemy[2] = false;
-			deadEnemy[3] = false;
-			deadEnemy[4] = false;
-			deadEnemy[5] = false;
-			deadEnemy[6] = false;
-			deadEnemy[7] = false;
-		}
-	}
-	
-	public void RestartGame () {
-		
 	}
 }

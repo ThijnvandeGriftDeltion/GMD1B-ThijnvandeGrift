@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Thijn/Scenes/Main Menu.unity
+- path: Assets/Thijn/Scenes/Bathroom.unity
   isLoaded: 1
   isActive: 1
